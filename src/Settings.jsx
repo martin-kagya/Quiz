@@ -5,23 +5,28 @@ import questions from './questions.json'
 
 function Settings ()
 {
-  const api = "src/questions.json"
-  const [category, setCategory] = useState(null)
+  const [category, setCategory] = useState('')
   const [score, setScore] = useState(0)
-  //useEffect(() =>
-  //{
-  //  fetch(api)
-  //  .then((res) => res.json())
-  //  .then((data) => setCategory(data))
-  //}, [])
+  const handleCatChange = (e) =>
+  {
+    setCategory(e.target.value)
+  }
   return (
     <>
       <div>
         <h1>
           Quiz App
         </h1>
-        <select value={category} onChange={(e) => setCategory(e.target.value)}>
-          <option>{questions[0].category}</option>
+        <select value={category} onChange={handleCatChange}>
+          <option value="">Select a category</option>
+            {
+              questions.map((q, index) => (
+              
+               <option value={q.category} key={index}>
+                 {q.category}
+               </option>
+              
+            ))}
         </select>
       </div>
     </>
