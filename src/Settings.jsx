@@ -14,14 +14,14 @@ function Settings() {
   }
   const handleNextQuestion = () =>
   {
-    if (choice === currentQuestion.questions[currentQuestionIndex].answer)
+    if(currentQuestionIndex < questions[0].questions.length - 1)
+    {
+      setQuestionIndex(currentQuestionIndex + 1)
+      if (choice === currentQuestion.questions[currentQuestionIndex].answer)
     {
       setScore(score + 5)
       console.log(score)
     }
-    if(currentQuestionIndex < questions.length - 1)
-    {
-      setQuestionIndex(currentQuestionIndex + 1)
     }
     
   }
@@ -56,20 +56,17 @@ function Settings() {
                   currentQuestion.questions[currentQuestionIndex].choices.map((choice, cindex) =>
                   
                     (
-                    <>
-                    
-                      <label>
-                        <li key={cindex} style={{listStyle: 'none'}}><input type='radio'
+                        <li key={cindex} style={{listStyle: 'none'}}>
+                        <label>
+                        <input type='radio'
                         value={choice}
-                        checked={choice === currentQuestion.questions[currentQuestionIndex].answer}
                         onChange={(e) => setChoice(e.target.value)}
                         name='answer'
                         >
-                        </input>{choice}</li>
+                        </input>{choice}
+                        </label>
+                        </li>
                         
-                      </label>
-                    
-                    </>
                     )
                   )
                 }
@@ -77,7 +74,7 @@ function Settings() {
               <button type="button" onClick={handleNextQuestion}>
                 Next
               </button>
-              <p>{score}</p>
+              <p>Score: {score}</p>
             </div>
             )
           }
