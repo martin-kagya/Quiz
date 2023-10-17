@@ -1,49 +1,72 @@
-import React from 'react'
-import './index.css'
-import {useState, useEffect} from 'react'
-import questions from './questions.json'
+import React, { useState } from 'react';
+import './index.css';
+import questions from './questions.json';
 
+function Settings() {
+  const [category, setCategory] = useState('');
+  const [currentQuestionIndex, setQuestionIndex] = useState(0)
 
-function Settings ()
-{
-  const [category, setCategory] = useState('')
-  const [score, setScore] = useState(0)
-  const handleCatChange = (e) =>
-  {
-    setCategory(e.target.value)
+  const handleCatChange = (e) => {
+    setCategory(e.target.value);
+    setQuestionIndex(0)
   }
-  function handleSubmit()
+  const handleNextQuestion = () =>
   {
-    if(category === 'History')
-    return(
-      <div>
-        <h2>{questions[0].questions[0].question}</h2>
-      </div>
-    )
-  } 
+    if(currentQuestionIndex < questions.length - 1)
+    {
+      setQuestionIndex(currentQuestionIndex + 1)
+    }
+  }
+  const currentQuestion = questions.find((q)=>q.category === category)
+
   return (
-    <>
-      <div className='container'>
-        <h1>
-          Quiz App
-        </h1>
+    <div className="container">
+      <h1>Quiz App</h1>
       <form>
         <select value={category} onChange={handleCatChange}>
           <option value="">Select a category</option>
-            {
-              questions.map((q, index) => (
-              
-               <option value={q.category} key={index}>
-                 {q.category}
-               </option>
-              
-            ))}
+          {questions.map((q, index) => (
+            <option value={q.category} key={index}>
+              {q.category}
+            </option>
+          ))}
         </select>
-        <button onSubmit={handleSubmit}>Next</button>
       </form>
-      </div>
-    </>
-  )
+
+      {category === 'History' && currentQuestion && (
+        <div>
+          <h2>History Questions</h2>
+          {
+            currentQuestion.questions[currentQuestionIndex] && (
+            <div>
+              <h3>{currentQuestion.questions[currentQuestionIndex].question}</h3>
+              <ul>
+                {
+                  currentQuestion.questions[currentQuestionIndex].choices.map((choice, cindex) =>
+                  
+                    (
+                      <label key={cindex}>
+                        <li key={cindex} style={{listStyle: 'none'}}><input type='radio' 
+                        key={cindex} 
+                        value={choice}
+                        name='answer'
+                        ></input>{choice}</li>
+                        
+                      </label>
+                    )
+                  )
+                }
+              </ul>
+              <button type="button" onClick={handleNextQuestion}>
+                Next
+              </button>
+            </div>
+            )
+          }
+        </div>
+      )}
+    </div>
+  );
 }
 
-export default Settings
+export default Settings;
