@@ -5,6 +5,8 @@ import questions from './questions.json';
 function Settings() {
   const [category, setCategory] = useState('');
   const [currentQuestionIndex, setQuestionIndex] = useState(0)
+  const [choice, setChoice] = useState('')
+  const [score, setScore] = useState(0)
 
   const handleCatChange = (e) => {
     setCategory(e.target.value);
@@ -12,11 +14,18 @@ function Settings() {
   }
   const handleNextQuestion = () =>
   {
+    if (choice === currentQuestion.questions[currentQuestionIndex].answer)
+    {
+      setScore(score + 5)
+      console.log(score)
+    }
     if(currentQuestionIndex < questions.length - 1)
     {
       setQuestionIndex(currentQuestionIndex + 1)
     }
+    
   }
+  
   const currentQuestion = questions.find((q)=>q.category === category)
 
   return (
@@ -32,27 +41,35 @@ function Settings() {
           ))}
         </select>
       </form>
-
+    
       {category === 'History' && currentQuestion && (
         <div>
           <h2>History Questions</h2>
           {
             currentQuestion.questions[currentQuestionIndex] && (
+          
             <div>
+              
               <h3>{currentQuestion.questions[currentQuestionIndex].question}</h3>
               <ul>
                 {
                   currentQuestion.questions[currentQuestionIndex].choices.map((choice, cindex) =>
                   
                     (
-                      <label key={cindex}>
-                        <li key={cindex} style={{listStyle: 'none'}}><input type='radio' 
-                        key={cindex} 
+                    <>
+                    
+                      <label>
+                        <li key={cindex} style={{listStyle: 'none'}}><input type='radio'
                         value={choice}
+                        checked={choice === currentQuestion.questions[currentQuestionIndex].answer}
+                        onChange={(e) => setChoice(e.target.value)}
                         name='answer'
-                        ></input>{choice}</li>
+                        >
+                        </input>{choice}</li>
                         
                       </label>
+                    
+                    </>
                     )
                   )
                 }
@@ -60,10 +77,12 @@ function Settings() {
               <button type="button" onClick={handleNextQuestion}>
                 Next
               </button>
+              <p>{score}</p>
             </div>
             )
           }
         </div>
+      
       )}
     </div>
   );
