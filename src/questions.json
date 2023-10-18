@@ -42,6 +42,16 @@
               "question": "Which element is used in the development of microchips",
               "choices": ["Carbon", "Germanium", "Silicon", "Silver"],
               "answer": "Silicon" 
+          },
+          {
+            "question": "What is the chemical symbol for gold",
+            "choices": ["Au", "Ag", "G", "Go"],
+            "answer": "Au"
+          },
+          {
+            "question": "What is the approximate speed of light",
+            "choices": ["300,000,000 m/s", "300,000,000 km/s", "300,000,000 cm/s", "300,000,000 mm/s"],
+            "answer": "300,000,000 m/s"
           }
   
       ]
