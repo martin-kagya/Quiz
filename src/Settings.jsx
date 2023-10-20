@@ -31,6 +31,12 @@ function Settings() {
         setChoice('');
       }
     }
+    if (currentQuestionIndex >= questions[catIndex].questions.length - 1)
+    {
+      alert("We are out of questions for the section...More to be added")
+      setQuestionIndex(0);
+      setScore(0);
+    }
   };
 
   const currentQuestion = questions.find((q) => q.category === category);
@@ -38,7 +44,7 @@ function Settings() {
     <div className="container">
       <h1>Quiz App</h1>
       <form>
-        <select value={category} onChange={handleCatChange}>
+        <select value={category} onChange={handleCatChange} className='selectionMenu'>
           <option value="">Select a category</option>
           {questions.map((q, index) => (
             <option value={q.category} key={index}>
@@ -48,7 +54,7 @@ function Settings() {
         </select>
       </form>
       {category === 'Science' && currentQuestion && (
-        <div>
+        <div className='science'>
           <h2>Science Questions</h2>
           {currentQuestion.questions[currentQuestionIndex] && (
             <div>
@@ -81,7 +87,7 @@ function Settings() {
         </div>
       )}
       {category === 'History' && currentQuestion && (
-        <div>
+        <div className='history'>
           <h2>History Questions</h2>
           {currentQuestion.questions[currentQuestionIndex] && (
             <div>
