@@ -10,7 +10,7 @@ function Settings() {
   const [catIndex, setCatIndex] = useState(0)
   const categories = ["History", "Science"]
 
-
+  
   const handleCatChange = (e) => {
     const newCategory = e.target.value
     setCategory(newCategory);
@@ -40,6 +40,18 @@ function Settings() {
   };
 
   const currentQuestion = questions.find((q) => q.category === category);
+  const getRadioClass = (currentChoice) => {
+    if (choice === questions[catIndex].questions[currentQuestionIndex].answer) {
+      if (currentChoice === choice) {
+        return 'correct';
+      }
+    } else {
+      if (currentChoice === choice) {
+        return 'incorrect';
+      }
+    }
+    return '';
+  };
   return (
     <div className="container">
       <h1>Quiz App</h1>
@@ -66,10 +78,12 @@ function Settings() {
                       <li key={cindex} style={{ listStyle: 'none' }}>
                         <label>
                           <input
+                            id='button'
                             name="answer"
                             value={choice}
                             type="radio"
                             onChange={(e) => setChoice(e.target.value)}
+                            className={getRadioClass(choice)}
                           />
                           {choice}
                         </label>
@@ -102,6 +116,7 @@ function Settings() {
                             type="radio"
                             value={choice}
                             onChange={(e) => setChoice(e.target.value)}
+                            className={getRadioClass(choice)}
                             name="answer"
                           />
                           {choice}
