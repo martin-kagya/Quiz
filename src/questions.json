@@ -31,7 +31,7 @@
           {
               "question": "Which of the following Scientists is associated with a cat",
               "choices": ["Einstein", "Tesla", "Schrodinger", "Heisenberg"],
-              "answer": "Schrondinger"
+              "answer": "Schrodinger"
           },
           {
               "question": "Which scientist is associated with the kite and key experiment",

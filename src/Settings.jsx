@@ -7,51 +7,49 @@ function Settings() {
   const [currentQuestionIndex, setQuestionIndex] = useState(0);
   const [choice, setChoice] = useState('');
   const [score, setScore] = useState(0);
-  const [catIndex, setCatIndex] = useState(0)
-  const categories = ["History", "Science"]
 
   
   const handleCatChange = (e) => {
+    
     const newCategory = e.target.value
     setCategory(newCategory);
     setQuestionIndex(0);
-    setCatIndex(categories.indexOf(newCategory))
     setScore(0);
   };
 
-  const handleNextQuestion = (e) => {
-    e.preventDefault();
-    if (catIndex >= 0 && catIndex < categories.length) {
-      if (currentQuestionIndex < questions[catIndex].questions.length - 1) {
-        const isCorrect = choice === questions[catIndex].questions[currentQuestionIndex].answer;
-        if (isCorrect) {
-          setScore(score + 5);
-        }
-        setQuestionIndex(currentQuestionIndex + 1);
-        setChoice('');
-      }
-    }
-    if (currentQuestionIndex >= questions[catIndex].questions.length - 1)
+  const handleNextQuestion = (e) => 
+  {
+    e.preventDefault()
+    if (currentQuestionIndex < currentQuestion.questions.length - 1)
     {
-      alert("We are out of questions for the section...More to be added")
-      setQuestionIndex(0);
-      setScore(0);
+    if (currentQuestion.questions[currentQuestionIndex].answer === choice)
+    {
+      setScore(score + 5);
     }
-  };
-
+    setQuestionIndex(currentQuestionIndex + 1)
+    setChoice('')
+  }
+  else{
+  currentQuestionIndex(0)
+  alert("More questions to be added soon")
+  }
+}
   const currentQuestion = questions.find((q) => q.category === category);
-  const getRadioClass = (currentChoice) => {
-    if (choice === questions[catIndex].questions[currentQuestionIndex].answer) {
-      if (currentChoice === choice) {
-        return 'correct';
+  
+  
+  const getRadioClass = (currentChoice) =>
+  {
+    if (currentChoice == choice)
+    {
+      if (currentQuestion.questions[currentQuestionIndex].answer)
+      {
+        return "correct"
       }
-    } else {
-      if (currentChoice === choice) {
-        return 'incorrect';
-      }
+      return "incorrect"
     }
-    return '';
-  };
+    return ''
+  }
+
   return (
     <div className="container">
       <h1>Quiz App</h1>
@@ -126,7 +124,7 @@ function Settings() {
                   )
                   }
                 </ul>
-                <button type="button" onClick={handleNextQuestion}>
+                <button onClick={handleNextQuestion}>
                   Next
                 </button>
                 <p>Score: {score}</p>
