@@ -1,88 +1,89 @@
 import React, { useEffect, useState } from 'react';
 import './index.css';
 import questions from './questions.json';
+import QuestionForm from './QuestionForm';
 
 function Settings() {
   const [category, setCategory] = useState('');
   const [currentQuestionIndex, setQuestionIndex] = useState(0);
   const [choice, setChoice] = useState('');
   const [score, setScore] = useState(0);
-  const [wrong, setWrong] = useState(0)
-  const [Seconds, setSeconds] = useState(0)
-  const [isRunning, setIsRunning] = useState(true)
-  
-  useEffect(() =>
-  {
+  const [wrong, setWrong] = useState(0);
+  const [Seconds, setSeconds] = useState(0);
+  const [isRunning, setIsRunning] = useState(true);
+
+  useEffect(() => {
     let interval;
-    if (isRunning)
-    {
+    if (isRunning) {
       interval = setInterval(() => {
-        setSeconds((prev) => prev + 1)
-      }, 1000)
+        setSeconds((prev) => prev + 1);
+      }, 1000);
     }
 
     return () => {
-      clearInterval(interval)
-    }
-  }, [isRunning])
-
-  function reset ()
-  {
+      clearInterval(interval);
+    };
+  }, [isRunning]);
+  function reset() {
     setSeconds(0);
     setIsRunning(true);
   }
-  
+
   const handleCatChange = (e) => {
-    
-    const newCategory = e.target.value
+    const newCategory = e.target.value;
     setCategory(newCategory);
     setQuestionIndex(0);
     setScore(0);
+    setChoice(''); // Reset the choice when category changes
+    reset(); // Reset the timer
+  };
+  
+  const handleNextQuestion = (e) => {
+    e.preventDefault();
+    if (choice != '')
+    {
+    if (currentQuestionIndex < currentQuestion.questions.length - 1) {
+      if (currentQuestion.questions[currentQuestionIndex].answer === choice) {
+        setScore(score + 5);
+      }
+      setQuestionIndex(currentQuestionIndex + 1);
+      setChoice('');
+      reset();
+    } else {
+      setQuestionIndex(0); // Use `setQuestionIndex` to update the state
+      alert("More questions to be added soon");
+    }
+    wrongCalc();
+  }
+  alert("Select an option")
+  };
+  const currentQuestion = questions.find((q) => q.category === category);
+
+  const getRadioClass = (currentChoice) => {
+    if (currentChoice === choice) {
+      if (currentQuestion.questions[currentQuestionIndex].answer) {
+        return "correct";
+      }
+      return "incorrect";
+    }
+    return '';
   };
 
-  
-
-  function wrongCalc (){
-    if(choice != currentQuestion.questions[currentQuestionIndex].answer)
-    {
-      setWrong(wrong + 1)
-    }
-  }
-
-  const handleNextQuestion = (e) => 
-  {
-    e.preventDefault()
-    if (currentQuestionIndex < currentQuestion.questions.length - 1)
-    {
-    if (currentQuestion.questions[currentQuestionIndex].answer === choice)
-    {
-      setScore(score + 5);
-    }
-    setQuestionIndex(currentQuestionIndex + 1)
-    setChoice('')
-    reset()
-  }
-  else{
-  currentQuestionIndex(0)
-  alert("More questions to be added soon")
-  }
-  wrongCalc()
-}
-  const currentQuestion = questions.find((q) => q.category === category);
-  
-  
-  const getRadioClass = (currentChoice) =>
-  {
-    if (currentChoice == choice)
-    {
-      if (currentQuestion.questions[currentQuestionIndex].answer)
-      {
-        return "correct"
-      }
-      return "incorrect"
-    }
-    return ''
-  }
+  // Move this outside of the return statement
+  const quizContent = currentQuestion && (
+    <div className={`quiz ${category.toLowerCase()}`}>
+      <h2>{category} Questions</h2>
+      {currentQuestion.questions[currentQuestionIndex] && (
+        <QuestionForm
+          currentQuestion={currentQuestion}
+          currentQuestionIndex={currentQuestionIndex}
+          handleNextQuestion={handleNextQuestion}
+          setChoice={setChoice}
+          getRadioClass={getRadioClass}
+        />
+      )}
+    </div>
+  );
 
   return (
     <div className="container">
@@ -97,80 +98,11 @@ function Settings() {
           ))}
         </select>
       </form>
-      <p className='time'>Time: {Seconds}</p>
-      {category === 'Science' && currentQuestion && (
-        <div className='science'>
-          <h2>Science Questions</h2>
-          {currentQuestion.questions[currentQuestionIndex] && (
-            <div>
-              <form>
-                <h3>{currentQuestion.questions[currentQuestionIndex].question}</h3>
-                <ul>
-                  {currentQuestion.questions[currentQuestionIndex].choices.map(
-                    (choice, cindex) => (
-                      <li key={cindex} style={{ listStyle: 'none' }}>
-                        <label>
-                          <input
-                            id='button'
-                            name="answer"
-                            value={choice}
-                            type="radio"
-                            onChange={(e) => setChoice(e.target.value)}
-                            className={getRadioClass(choice)}
-                          />
-                          {choice}
-                        </label>
-                      </li>
-                    )
-                  )}
-                </ul>
-                <button onClick={handleNextQuestion}>
-                  Next
-                </button>
-                <p>Score: {score}</p>
-                <p>Wrong answers: {wrong}</p>
-              </form>
-            </div>
-          )}
-        </div>
+      {category && (
+        <p className='time'>{Seconds}</p>
       )}
-      {category === 'History' && currentQuestion && (
-        <div className='history'>
-          <h2>History Questions</h2>
-          {currentQuestion.questions[currentQuestionIndex] && (
-            <div>
-              <form>
-                <h3>{currentQuestion.questions[currentQuestionIndex].question}</h3>
-                <ul>
-                  {currentQuestion.questions[currentQuestionIndex].choices.map(
-                    (choice, cindex) => (
-                      <li key={cindex} style={{ listStyle: 'none' }}>
-                        <label>
-                          <input
-                            type="radio"
-                            value={choice}
-                            onChange={(e) => setChoice(e.target.value)}
-                            className={getRadioClass(choice)}
-                            name="answer"
-                          />
-                          {choice}
-                        </label>
-                      </li>
-                    )
-                  )
-                  }
-                </ul>
-                <button onClick={handleNextQuestion}>
-                  Next
-                </button>
-                <p>Score: {score}</p>
-                <p>Wrong answers: {wrong}</p>
-                <p>Time: {Seconds}</p>
-              </form>
-            </div>
-          )}
-        </div>
-      )}
+      {quizContent}
+      <p className='score'>Score: {score}</p>
     </div>
   );
 }

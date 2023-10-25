@@ -1,17 +1,30 @@
+/* Apply a background color and a subtle gradient to the body */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fuggles&family=Lato:wght@900&family=Quicksand:wght@300;400;500;600&display=swap');
-
-* {
+body {
+  background: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: 'Quicksand', sans-serif;
-  font-size: 1.2vw
-  
+  font-size: 1.0vw;
 }
 
-body {
-  background-color: #f5f5f5;
+/* Center the entire container both horizontally and vertically */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 4%;
+  max-width: 60ch;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+  background-color: #ffffff; /* Add a background color */
 }
+
+/* Style the heading font with a text shadow for emphasis */
 h1 {
   font-family: 'Bebas Neue', cursive;
   font-size: 3rem;
@@ -19,79 +32,48 @@ h1 {
   text-shadow: 2px 2px 2px black;
   margin-bottom: 1rem;
 }
-.history
+
+.question
 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-.science
-{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-.history h2
-{
-  font-family: 'Bebas Neue', cursive;
-  font-size: 2rem;
-  color: #f5f5f5;
-  text-shadow: 2px 2px 2px black;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.5rem;
+  color: #000000;
   margin-bottom: 1rem;
-}
-.science h2
-{
-  font-family: 'Bebas Neue', cursive;
-  font-size: 2rem;
-  color: #f5f5f5;
-  text-shadow: 2px 2px 2px black;
-  margin-bottom: 1rem;
-}
-.container
-{
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-items: center;
-  flex-direction: column;
-  border: 2px solid black;
-  border-radius: 10px;
-  border-style: dotted;
-  padding: 4%, 4%;
-  place-self: center;
-  margin-left: 30%;
-  max-width: 60ch;
-  margin: 0 auto;
-  text-align: center;
-  overflow: hidden;
 }
 
-@media (min-width:700px) {
-  .container{
-    width: 70vw;
-    height: 70vh;
-  }
+input{
+  display: flex;
 }
-@media (max-width: 360px)
-{
-  .container{
-    width: 70vw;
-    height: 70vh;
-  }
+
+li{
+  display: flex;
 }
-@media only screen and(max-width: 700) and (min-width: 400px){
-  .container{
-    width: 80ch;
-    height: 60vh;
-  }
+/* Style the buttons for better user interaction */
+button {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  border: 2px solid black;
+  background-color: #f5f5f5;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem 1rem; /* Increase the padding for a larger clickable area */
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
 }
-button{
+
+button:hover {
+  background-color: #000000;
+  color: #1c7c08;
+  border: 2px solid #f5f5f5;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Style the select dropdown for better aesthetics */
+select {
   margin-top: 1rem;
   margin-bottom: 1rem;
   border-radius: 10px;
@@ -101,75 +83,37 @@ button{
   font-size: 1rem;
   padding: 0.5rem;
   cursor: pointer;
-  transition: 0.3s;
-}
-.correct
-{
-  border: 2px solid green;
-}
-.incorrect
-{
-  border: 2px solid red
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
 }
 
-button:hover{
+select:hover {
   background-color: #000000;
   color: #1c7c08;
   border: 2px solid #f5f5f5;
 }
 
-button:focus{
+select:focus {
   outline: none;
 }
 
-select:focus
-{
-  outline: none;
-}
-select{
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 10px;
-  border: 2px solid black;
-  background-color: #f5f5f5;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 1rem;
-  padding: 0.5rem;
-  cursor: pointer;
-  transition: 0.3s;
-}
-select:hover{
-  background-color: #000000;
-  color: #1c7c08;
-  border: 2px solid #f5f5f5;
-}
-
-select:focus{
-  outline: none;
-}
-
-
+/* Style the countdown timer circle */
 .time {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  border: 2px solid #0074d9;
-  animation: rotate 60s linear infinite;
-  transition: border-color 0.3s ease-in-out;
-  font-size: 10px;
+  border: 6px solid lightblue;
+  animation: countdown 30s linear infinite;
 }
 
-.circle-animation.running {
-  border-color: #ff4136;
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes countdown {
+  0% { border-top-color: lightblue; }
+  25% { border-top-color: white; }
+  50% { border-bottom-color: white; }
+  75% { border-bottom-color: lightblue; }
+  100% { border-top-color: lightblue; }
 }
