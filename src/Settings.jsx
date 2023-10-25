@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './index.css';
 import questions from './questions.json';
 
@@ -7,7 +7,30 @@ function Settings() {
   const [currentQuestionIndex, setQuestionIndex] = useState(0);
   const [choice, setChoice] = useState('');
   const [score, setScore] = useState(0);
+  const [wrong, setWrong] = useState(0)
+  const [Seconds, setSeconds] = useState(0)
+  const [isRunning, setIsRunning] = useState(true)
+  
+  useEffect(() =>
+  {
+    let interval;
+    if (isRunning)
+    {
+      interval = setInterval(() => {
+        setSeconds((prev) => prev + 1)
+      }, 1000)
+    }
 
+    return () => {
+      clearInterval(interval)
+    }
+  }, [isRunning])
+
+  function reset ()
+  {
+    setSeconds(0);
+    setIsRunning(true);
+  }
   
   const handleCatChange = (e) => {
     
@@ -16,6 +39,15 @@ function Settings() {
     setQuestionIndex(0);
     setScore(0);
   };
+
+  
+
+  function wrongCalc (){
+    if(choice != currentQuestion.questions[currentQuestionIndex].answer)
+    {
+      setWrong(wrong + 1)
+    }
+  }
 
   const handleNextQuestion = (e) => 
   {
@@ -28,11 +60,13 @@ function Settings() {
     }
     setQuestionIndex(currentQuestionIndex + 1)
     setChoice('')
+    reset()
   }
   else{
   currentQuestionIndex(0)
   alert("More questions to be added soon")
   }
+  wrongCalc()
 }
   const currentQuestion = questions.find((q) => q.category === category);
   
@@ -63,6 +97,7 @@ function Settings() {
           ))}
         </select>
       </form>
+      <p className='time'>Time: {Seconds}</p>
       {category === 'Science' && currentQuestion && (
         <div className='science'>
           <h2>Science Questions</h2>
@@ -93,6 +128,7 @@ function Settings() {
                   Next
                 </button>
                 <p>Score: {score}</p>
+                <p>Wrong answers: {wrong}</p>
               </form>
             </div>
           )}
@@ -128,6 +164,8 @@ function Settings() {
                   Next
                 </button>
                 <p>Score: {score}</p>
+                <p>Wrong answers: {wrong}</p>
+                <p>Time: {Seconds}</p>
               </form>
             </div>
           )}
