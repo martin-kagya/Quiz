@@ -1,4 +1,4 @@
-[
+[ 
   {
       "category": "History",
       "questions": [
@@ -55,6 +55,27 @@
           }
   
       ]
+  },
+  {
+    "category": "Mathematics",
+    "questions":
+    [
+        {
+            "question": "What is the radius of a circle with circumference, 54 meters",
+            "choices": ["17.188 meters", "34 meters", "45.32 meters", "3.56 meters"],
+            "answer": "17.188 meters"
+        },
+    {
+        "question": "Where is the Clairut rule used?",
+        "choices": ["Partial Fractions", "Statistics", "Partial Derivatives", "Recurrent Neural Networks"],
+        "answer": "Partial Derivatives"
+    },
+    {
+        "question": "What is 60% of 50",
+        "choices": ["30", "10", "50", "40"],
+        "answer": "30"
+    }
+    ]
   }
   ]
   

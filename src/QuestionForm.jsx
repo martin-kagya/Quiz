@@ -9,7 +9,6 @@ const QuestionForm = ({
   
 }) => {
   const questionData = currentQuestion.questions[currentQuestionIndex];
-
   return (
     <div>
       <form>

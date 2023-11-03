@@ -8,18 +8,17 @@ function Settings() {
   const [currentQuestionIndex, setQuestionIndex] = useState(0);
   const [choice, setChoice] = useState('');
   const [score, setScore] = useState(0);
-  const [wrong, setWrong] = useState(0);
   const [Seconds, setSeconds] = useState(0);
   const [isRunning, setIsRunning] = useState(true);
 
   useEffect(() => {
     let interval;
+    let count = 0
     if (isRunning) {
       interval = setInterval(() => {
         setSeconds((prev) => prev + 1);
       }, 1000);
     }
-
     return () => {
       clearInterval(interval);
     };
@@ -55,7 +54,7 @@ function Settings() {
     }
     wrongCalc();
   }
-  alert("Select an option")
+  alert("Select an option") 
   };
   const currentQuestion = questions.find((q) => q.category === category);
 
@@ -68,7 +67,6 @@ function Settings() {
     }
     return '';
   };
-
   // Move this outside of the return statement
   const quizContent = currentQuestion && (
     <div className={`quiz ${category.toLowerCase()}`}>
