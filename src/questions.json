@@ -62,8 +62,8 @@
     [
         {
             "question": "What is the radius of a circle with circumference, 54 meters",
-            "choices": ["17.188 meters", "34 meters", "45.32 meters", "3.56 meters"],
-            "answer": "17.188 meters"
+            "choices": ["8.59 meters", "34 meters", "45.32 meters", "3.56 meters"],
+            "answer": "8.59 meters"
         },
     {
         "question": "Where is the Clairut rule used?",
@@ -74,7 +74,79 @@
         "question": "What is 60% of 50",
         "choices": ["30", "10", "50", "40"],
         "answer": "30"
+    },
+    {
+        "question": "Which of the following helps in Binary classification",
+        "choices":["Linear Regression", "Differentiation", "Integrals", "Binomials"],
+        "answer": "Linear Regression"
+    },
+    {
+        "question": "What is the derivative of x^2",
+        "choices": ["2x", "x^2", "x", "2"],
+        "answer": "2x"
     }
+    ]
+  },
+  {
+    "category" : "Geography",
+    "questions":
+    [
+        {
+            "question": "Which of the following is not a continent",
+            "choices": ["Africa", "Antarctica", "Australia", "Arctica"],
+            "answer": "Arctica"
+        },
+        {
+            "question": "Which of the following is not a country",
+            "choices": ["Nigeria", "Ghana", "Kenya", "Korea"],
+            "answer": "Korea"
+        },
+        {
+            "question": "Which of the following is not a city",
+            "choices": ["Lagos", "Abuja", "Kano", "Korea"],
+            "answer": "Korea"
+        },
+        {
+            "question": "Which of the following is not a state",
+            "choices": ["Lagos", "Abuja", "Kano", "Korea"],
+            "answer": "Korea"
+        },
+        {
+            "question": "Which of the following is not a continent",
+            "choices": ["Africa", "Antarctica", "Australia", "Arctica"],
+            "answer": "Arctica"
+        }
+    ]
+  },
+  {
+    "category" : "JavaScript",
+    "questions" : 
+    [
+        {
+            "question" : "How are comments added to JavaScript code",
+            "choices" : ["//", "/*", "<!--", "Both // and /*"],
+            "answer" : "Both // and /*"
+        },
+        {
+            "question" : "Which of the following is not a JavaScript data type",
+            "choices" : ["Boolean", "String", "Number", "Character"],
+            "answer" : "Character"
+        },
+        {
+            "question" : "Which of the following is not a JavaScript keyword",
+            "choices" : ["var", "let", "const", "int"],
+            "answer" : "int"
+        },
+        {
+            "question" : "Which of the following is not a JavaScript framework",
+            "choices" : ["React", "Angular", "Vue", "Django"],
+            "answer" : "Django"
+        },
+        {
+            "question" : "Which of the following is not a JavaScript library",
+            "choices" : ["jQuery", "React", "Angular", "Vue"],
+            "answer" : "React"
+        }
     ]
   }
   ]

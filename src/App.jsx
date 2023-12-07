@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import Settings from './Settings'
 import './App.css'
+import Display from './assets/Display'
 
 function App() {
 
   return (
     <>
-      <Settings />
+      <Display />
     </>
   )
 }
