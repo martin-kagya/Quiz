@@ -12,22 +12,26 @@ function Display ()
     const currentQuestion = questionData.find((q) => q.category === category);
     function handleCatChange(e)
     {
+        const title = document.querySelector(".title")
+        title.classList.add("hidden")
         setChoice("")
         const newCategory = e.target.value
         setCategory(() => newCategory)
     }
     return(
         <>
-        <div className="container bg-slate-950">
-            <h1 className="">QUIZ APP</h1>
-            <select onChange={handleCatChange}>
-                <option>Select a category</option>
-                {questionData.map((question, index) => 
-                <option key={index} >
-                    {question.category}
-                </option>
-                )}
-            </select>
+        <div className="container flex justify-center items-center flex-col">
+            <h1 className="text-xl font-bold pt-4">QUIZ APP</h1>
+            <ul className="title grid grid-rows-3 grid-flow-col gap-3">
+                {questionData.map((q) => {
+                    return(
+                        <li key={q.category}>
+                            <button className="tile border rounded-md border-black h-32 w-32 bg-gradient-to-r from-cyan-500 to-blue-500 text-lg" onClick={handleCatChange} value={q.category}>{q.category}</button>
+                        </li>
+                    )
+                
+                })}
+            </ul>
                 {category && currentQuestion && (
                 
                 <QuestionForm 

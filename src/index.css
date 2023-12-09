@@ -1,12 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'montserrat';
+    background-color: #EFF0F3;
+}
 .correct{
-    background-color: green;
+    background-color: #ABD1C6;
 }
 .wrong{
     background-color: red;
 }
 .selected{
     background-color: blue;
+}
+button:disabled{
+    cursor: not-allowed;
+}
+.tile{
+    transition: transform 0.5s ease-in-out;
+}
+.tile:hover{
+    transform: scale(1.1);
+}
+h1{
+    font-size: 3rem;
+    font-weight: 200;
+}
+.card
+{
+    border-radius: 40px; 
+    word-wrap: break-word;
+    width: 80%;
+    backdrop-filter:blur(20px); 
+    background-color: rgba(255,255,255,0.5); 
+    box-shadow: 0 1px 12px rgba(0,0,0,0, 0.25); 
+    border: 1px solid rgba(255,255,255, 0.3); 
+}
+.card2{
+    border-radius: 40px;
+    word-wrap: break-word; 
+    backdrop-filter:blur(20px); 
+    background-color: rgba(255,255,255,0.5); 
+    box-shadow: 0 1px 12px rgba(0,0,0,0, 0.25); 
+    border: 1px solid rgba(255,255,255, 0.3);
+}
+
+.tick{
+    border-radius: 50%;
+    width: 20px; /* Adjust the width to a small value */
+    height: 20px; /* Adjust the height to a small value */
+    background-color: #EFF0F3;
+    margin: 0 auto;
+    /* Optionally, you can add a border for better visibility */
+    border: 1px solid #ccc;
+    right: 2%;
+    bottom: 25%;
+    background-color: #004643;
 }
