@@ -32,7 +32,7 @@ function QuestionForm({ currentQuestion, category, choice, setChoice }) {
       clearInterval(intervalId)
     }
   }, [category, setChoice]); // this will run anytime the category changes
-  if (timer === 10)
+  if (timer === 30)
   {
     handleNext()
   }
@@ -46,6 +46,7 @@ function QuestionForm({ currentQuestion, category, choice, setChoice }) {
     if ((questionIndex < currentQuestion.questions.length - 1)){
       setQuestionIndex(questionIndex + 1);
     } else {
+      window.location.reload();
       setQuestionIndex(0);
       alert("Questions exhausted");
     }
