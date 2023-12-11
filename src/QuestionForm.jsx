@@ -34,7 +34,7 @@ function QuestionForm({ currentQuestion, category, choice, setChoice }) {
   }, [category, setChoice]); // this will run anytime the category changes
   if (timer === 10)
   {
-    //handleNext()
+    handleNext()
   }
   function handleNext() {
     setDisabled(false);
@@ -92,6 +92,7 @@ function QuestionForm({ currentQuestion, category, choice, setChoice }) {
         ))}
       </ul>
       <p className="italic pt-4">You have 30 seconds for each question</p>
+      <p className="italic pt-4">More functions and questions to be added soon</p>
       <button onClick={handleNext} className="card2 w-56 mt-48 p-2 rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 text-lg">
         Next
       </button>
