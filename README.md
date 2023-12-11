@@ -1,4 +1,4 @@
-# React + Vite
+# Quiz App
 
 This my small repository to learn React Js.
 
