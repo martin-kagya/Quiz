@@ -53,13 +53,62 @@ h1{
 
 .tick{
     border-radius: 50%;
-    width: 20px; /* Adjust the width to a small value */
-    height: 20px; /* Adjust the height to a small value */
+    width: 20px;
+    height: 20px;
     background-color: #EFF0F3;
     margin: 0 auto;
-    /* Optionally, you can add a border for better visibility */
     border: 1px solid #ccc;
     right: 2%;
     bottom: 25%;
     background-color: #004643;
+}
+.cross{
+    border-radius: 50%;
+    width: 20px; 
+    height: 20px;
+    background-color: #EFF0F3;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    right: 2%;
+    bottom: 25%;
+    background-color: red;
+}
+@media only screen and (max-width: 480px)
+{
+    .timer{
+        border-radius: 50%;
+        width: 50px; 
+        height: 50px; 
+        background-color: #EFF0F3;
+        margin: 0 auto;
+        border: 1px solid #ccc;
+        top: 12%;
+        right: 15%;
+    }
+}
+@media only screen and (min-width: 1024px)
+{
+    .timer{
+        border-radius: 50%;
+        width: 50px; 
+        height: 50px; 
+        background-color: #EFF0F3;
+        margin: 0 auto;
+        border: 1px solid #ccc;
+        top: 8%;
+        right: 30%;
+    }
+}
+@media only screen and (min-width: 1444px)
+{
+    .timer{
+        border-radius: 50%;
+        width: 50px; 
+        height: 50px; 
+        background-color: #EFF0F3;
+        margin: 0 auto;
+        border: 1px solid #ccc;
+        top: 11%;
+        right: 45%;
+    }
 }
