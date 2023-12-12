@@ -74,7 +74,7 @@ function QuestionForm({ currentQuestion, category, choice, setChoice }) {
 
   return (
     <>
-      <h2 className="m-4 text-lg card h-48 relative text-justify flex justify-center items-center p-4 md:w-96">
+      <h2 className="text-lg card h-48 relative text-justify flex justify-center items-center p-4 md:w-96">
         {category && QuestionDetails.question}
       </h2>
       <p className="absolute timer flex justify-center items-center">{timerRef.current}</p>
@@ -95,12 +95,12 @@ function QuestionForm({ currentQuestion, category, choice, setChoice }) {
           </li>
         ))}
       </ul>
-      <p className="italic pt-4">You have 30 seconds for each question</p>
-      <p className="italic pt-4">More functions and questions to be added soon</p>
-      <h2 className="text-xl">Score: {score}</h2>
-      <button onClick={handleNext} className="card2 w-56 mt-48 p-2 rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 text-lg">
+      <p className="italic p-4">You have 30 seconds for each question</p>
+      <button onClick={handleNext} className="card2 w-56 mt-30 p-2 rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 text-lg">
         Next
       </button>
+      <br></br>
+      <h2 className="text-xl">Score: {score}</h2>
     </>
   );
 }

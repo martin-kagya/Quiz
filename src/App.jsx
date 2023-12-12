@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-    <div className="container h-36 flex pt-16 items-center flex-col text-xs">
+    <div className="container h-36 flex pt-16 items-center flex-col text-xs scroll-smooth">
       <Display />
     </div>
     </>
