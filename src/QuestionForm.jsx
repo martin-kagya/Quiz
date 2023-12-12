@@ -13,11 +13,13 @@ function QuestionForm({ currentQuestion, category, choice, setChoice }) {
   const [tick, setTick] = useState(false);
   const QuestionDetails = currentQuestion.questions[questionIndex];
   const timerRef = useRef(0);
+  const [score, setscore] = useState(0)
   const buttonrefs = useRef(QuestionDetails.choices.map(() => React.createRef())); // create a ref for each choice
 
   useEffect(() => {
     setDisabled(false);
     setChoice("");
+    setscore(0)
     setwrong(false)
     setTick(false); // Reset the tick state when moving to the next question
     settimer(0)
@@ -60,6 +62,7 @@ function QuestionForm({ currentQuestion, category, choice, setChoice }) {
 
     if (currentChoice === QuestionDetails.answer) {
       setTick(true);
+      setscore(score + 5)
     } 
     setChoice(currentChoice);
     if(currentChoice !== QuestionDetails.answer)
@@ -94,6 +97,7 @@ function QuestionForm({ currentQuestion, category, choice, setChoice }) {
       </ul>
       <p className="italic pt-4">You have 30 seconds for each question</p>
       <p className="italic pt-4">More functions and questions to be added soon</p>
+      <h2 className="text-xl">Score: {score}</h2>
       <button onClick={handleNext} className="card2 w-56 mt-48 p-2 rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 text-lg">
         Next
       </button>

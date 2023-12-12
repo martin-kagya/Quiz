@@ -82,7 +82,7 @@ h1{
         background-color: #EFF0F3;
         margin: 0 auto;
         border: 1px solid #ccc;
-        top: 12%;
+        top: 10%;
         right: 15%;
     }
 }
@@ -111,4 +111,13 @@ h1{
         top: 11%;
         right: 45%;
     }
+}
+
+input:focus{
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.8);
+}
+
+input::placeholder{
+    font-style: italic;
 }
