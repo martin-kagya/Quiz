@@ -6,13 +6,13 @@ import { ImCross } from "react-icons/im";
 
 function QuestionForm({ currentQuestion, category, choice, setChoice }) {
   const [questionIndex, setQuestionIndex] = useState(0);
-  const [timer, settimer] = useState(null)
+  const [timer, settimer] = useState(30)
   const [disabled, setDisabled] = useState(false);
   const [wrongIndex, setwrongIndex] = useState(null)
   const [wrong, setwrong] = useState(false)
   const [tick, setTick] = useState(false);
   const QuestionDetails = currentQuestion.questions[questionIndex];
-  const timerRef = useRef(0);
+  const timerRef = useRef(30);
   const [score, setscore] = useState(0)
   const buttonrefs = useRef(QuestionDetails.choices.map(() => React.createRef())); // create a ref for each choice
 
@@ -22,26 +22,26 @@ function QuestionForm({ currentQuestion, category, choice, setChoice }) {
     setscore(0)
     setwrong(false)
     setTick(false); // Reset the tick state when moving to the next question
-    settimer(0)
+    settimer(30)
     setwrongIndex(null)
 
     let intervalId = setInterval(() => {
-      settimer(prevtimer => prevtimer + 1)
-      timerRef.current = timerRef.current + 1;
+      settimer(prevtimer => prevtimer - 1)
+      timerRef.current = timerRef.current - 1;
     }, 1000)
    
     return () => {
       clearInterval(intervalId)
     }
   }, [category, setChoice]); // this will run anytime the category changes
-  if (timer === 30)
+  if (timer === 0)
   {
     handleNext()
   }
   function handleNext() {
     setDisabled(false);
-    timerRef.current = 0;
-    settimer(0)
+    timerRef.current = 30;
+    settimer(30)
     setwrong(false)
     setChoice(""); // Reset the choice when moving to the next question
     setTick(false); // Reset the tick state when moving to the next question

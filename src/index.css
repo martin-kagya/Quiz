@@ -8,6 +8,7 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'montserrat';
+    box-sizing: border-box;
     background-color: #EFF0F3;
 }
 .correct{
@@ -82,7 +83,7 @@ h1{
         background-color: #EFF0F3;
         margin: 0 auto;
         border: 1px solid #ccc;
-        top: 10%;
+        top: 6%;
         right: 15%;
     }
 }
@@ -95,7 +96,7 @@ h1{
         background-color: #EFF0F3;
         margin: 0 auto;
         border: 1px solid #ccc;
-        top: 8%;
+        top: 4%;
         right: 30%;
     }
 }
@@ -108,7 +109,7 @@ h1{
         background-color: #EFF0F3;
         margin: 0 auto;
         border: 1px solid #ccc;
-        top: 11%;
+        top: 6%;
         right: 45%;
     }
 }

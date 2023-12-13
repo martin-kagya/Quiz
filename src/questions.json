@@ -21,6 +21,36 @@
               "question": "Which famous Turkish Empire came to an end in the 1900",
               "choices": ["The Turkiye Empire", "Ottoman Empire", "Hunnic Empire", "Khazar Khaganate"],
               "answer": "Ottoman Empire"
+          },
+          {
+            "question": "In which year was the Treaty of Versailles signed",
+            "choices": ["1919", "1918", "1917", "1916"],
+            "answer": "1919"
+          },
+          {
+            "question": "UN was formed in which year",
+            "choices": ["1945", "1946", "1947", "1948"],
+            "answer": "1945"
+          },
+          {
+            "question": "Which famous incidence made the US join World War 2",
+            "choices": ["Pearl Harbor", "Hiroshima", "Nagasaki", "Dunkirk"],
+            "answer": "Pearl Harbor"
+          },
+          {
+            "question": "When did the American Civil War end",
+            "choices": ["1865", "1866", "1867", "1868"],
+            "answer": "1865"
+          },
+          {
+            "question": "Which military commander was known as the Desert Fox",
+            "choices": ["Napoleon", "Erwin Schrodinger", "George Patton", "Erwin Rommel"],
+            "answer": "Erwin Rommel"
+          },
+          {
+            "question": "Where did Napoleon Bonaparte die",
+            "choices": ["Austrialia", "St. John's", "Paris", "St. Helena"],
+            "answer": "St. Helena"
           }
       ]
   },
@@ -34,26 +64,60 @@
               "answer": "Schrodinger"
           },
           {
-              "question": "Which scientist is associated with the kite and key experiment",
-              "choices": ["Isaac Newton", "Neil Tyresse", "Neil Bohr", "Benjamin Franklin"],
-              "answer": "Benjamin Franklin"
-          },
-          {
               "question": "Which element is used in the development of microchips",
               "choices": ["Carbon", "Germanium", "Silicon", "Silver"],
               "answer": "Silicon" 
           },
           {
-            "question": "What is the chemical symbol for gold",
-            "choices": ["Au", "Ag", "G", "Go"],
-            "answer": "Au"
-          },
-          {
             "question": "What is the approximate speed of light",
             "choices": ["300,000,000 m/s", "300,000,000 km/s", "300,000,000 cm/s", "300,000,000 mm/s"],
             "answer": "300,000,000 m/s"
-          }
-  
+          },
+          {
+            "question": "What inorganic molecule is produced by lightning",
+            "choices": ["Ozone", "Oxygen", "Nitrogen", "Hydrogen"],
+            "answer": "Ozone"
+          },
+          {
+            "question": "Oxygen was discovered by which scientist",
+            "choices": ["Joseph Priestley", "Isaac Newton", "Albert Einstein", "Thomas Edison"],
+            "answer": "Joseph Priestley"
+          },
+          {
+            "question": "How many elements are on the periodic table",
+            "choices": ["118", "119", "120", "121"],
+            "answer": "118"      
+        },
+        {
+            "question": "What is the rarest blood type",
+            "choices": ["AB-", "AB+", "O-", "O+"],
+            "answer": "AB-"
+        },
+        {
+            "question": "Which disease stems from the medieval term, 'bad air'",
+            "choices": ["Malaria", "Typhoid", "Tuberculosis", "Cholera"],
+            "answer": "Malaria"
+        },
+        {
+            "question": "Oncology is the study of what?",
+            "choices": ["Cancer", "Bones", "Blood", "Skin"],
+            "answer": "Cancer"
+        },
+        {
+            "question": "What type of cell division results in two four daughter cells, each with half the number of chromosomes in the parent cells?",
+            "choices": ["Meiosis", "Mitosis", "Cytokinesis", "Binary Fission"],
+            "answer": "Meiosis"
+        },
+        {
+            "question": "What is the name of the most recent supercontinent?",
+            "choices": ["Pangaea", "Gondwana", "Laurasia", "Pannotia"],
+            "answer": "Pangaea"
+        },
+        {
+            "question": "What is the scientific term for peeling of skin",
+            "choices": ["Exfoliation", "Desquamation", "Ecdysis", "Moulting"],
+            "answer": "Desquamation"
+        }
       ]
   },
   {
@@ -65,26 +129,51 @@
             "choices": ["8.59 meters", "34 meters", "45.32 meters", "3.56 meters"],
             "answer": "8.59 meters"
         },
-    {
-        "question": "Where is the Clairut rule used?",
-        "choices": ["Partial Fractions", "Statistics", "Partial Derivatives", "Recurrent Neural Networks"],
-        "answer": "Partial Derivatives"
-    },
-    {
-        "question": "What is 60% of 50",
-        "choices": ["30", "10", "50", "40"],
-        "answer": "30"
-    },
-    {
-        "question": "Which of the following helps in Binary classification",
-        "choices":["Linear Regression", "Differentiation", "Integrals", "Binomials"],
-        "answer": "Linear Regression"
-    },
-    {
-        "question": "What is the derivative of x^2",
-        "choices": ["2x", "x^2", "x", "2"],
-        "answer": "2x"
-    }
+        {
+            "question": "What is the derivative of x^2",
+            "choices": ["2x", "x^2", "x", "2"],
+            "answer": "2x"
+        },
+        {
+            "question": "Which of the following helps in Binary classification",
+            "choices":["Linear Regression", "Differentiation", "Integrals", "Binomials"],
+            "answer": "Linear Regression"
+        },
+        {
+            "question": "Which of the following numbers is the greatest",
+            "choices": ["googol", "googolplex", "quadrillion", "billion"],
+            "answer": "googolplex"
+        },
+        {
+            "question": "What is the highest common factor of 30 and 132",
+            "choices": ["6", "8", "16", "32"],
+            "answer": "6"
+        },
+        {
+            "question": "Our measurement of time is based on which number system",
+            "choices": ["Decimal", "Binary", "Octal", "Sexagesimal"],
+            "answer": "Sexagesimal"
+        },
+        {
+            "question": "What is next in the following number series: 256, 289, 324, 361 . . . ?", 
+            "choices": ["400", "441", "484", "529"],
+            "answer": "400"
+        }, 
+        {
+            "question": "A car is traveling at the rate of 75 kilometers per hour. How many meters is the car traveling in one minute?",
+            "choices": ["1250", "125", "750", "7500"],
+            "answer": "1250"
+        },
+        {
+            "question": "A man is currently 4 times older than his son. In 10 years, the man will be three times older than his son. What is the man’s age presently?",
+            "choices": ["40", "80", "20", "10"],
+            "answer": "80"
+        },
+        {
+            "question": "What is the next number in the following series: 1, 2, 4, 7, 11, 16, 22, . . . ?",
+            "choices": ["29", "30", "31", "32"],
+            "answer": "29"
+        }
     ]
   },
   {
@@ -97,24 +186,49 @@
             "answer": "Arctica"
         },
         {
-            "question": "Which of the following is not a country",
-            "choices": ["Nigeria", "Ghana", "Kenya", "Korea"],
-            "answer": "Korea"
+            "question": "What is the oldest city in the world",
+            "choices": ["Damascus", "Jerusalem", "Athens", "Rome"],
+            "answer": "Damascus"
         },
         {
-            "question": "Which of the following is not a city",
-            "choices": ["Lagos", "Abuja", "Kano", "Korea"],
-            "answer": "Korea"
+            "question": "What present day city does Mt. Vesuvius overlook?",
+            "choices": ["Rome", "Naples", "Venice", "Milan"],
+            "answer": "Naples"
         },
         {
-            "question": "Which of the following is not a state",
-            "choices": ["Lagos", "Abuja", "Kano", "Korea"],
-            "answer": "Korea"
+            "question": "How many countries are in the United Kingdom",
+            "choices": ["3", "4", "5", "6"],
+            "answer": "4"
         },
         {
-            "question": "Which of the following is not a continent",
-            "choices": ["Africa", "Antarctica", "Australia", "Arctica"],
-            "answer": "Arctica"
+            "question": "What is the name of the second tallest mountain in the world",
+            "choices": ["K2", "Kilimanjaro", "Everest", "Kanchenjunga"],
+            "answer": "K2"
+        },
+        {
+            "question": "Where is the name `Europe` derived from",
+            "choices": ["Greek Mythology", "Roman Mythology", "Egyptian Mythology", "Norse Mythology"],
+            "answer": "Greek Mythology"
+        },
+        {
+            "question": "What is the depth of the deepest part of the ocean",
+            "choices": ["11,034 meters", "11,034 feet", "11,034 kilometers", "11,034 miles"],
+            "answer": "11,034 meters"
+        },
+        {
+            "question": "What is the deepest part of the ocean",
+            "choices": ["Mariana Trench", "Puerto Rico Trench", "Point Nemo", "Philippine Trench"],
+            "answer": "Mariana Trench"
+        },
+        {
+            "question": "What country has older pyramids than Egypt",
+            "choices": ["Sudan", "Ethiopia", "Algeria", "Morocco"],
+            "answer": "Sudan"
+        },
+        {
+            "question": "Which city is of religious importance to the three major religions",
+            "choices": ["Jerusalem", "Mecca", "Medina", "Rome"],
+            "answer": "Jerusalem"
         }
     ]
   },
@@ -122,11 +236,6 @@
     "category" : "JavaScript",
     "questions" : 
     [
-        {
-            "question" : "How are comments added to JavaScript code",
-            "choices" : ["//", "/*", "<!--", "Both // and /*"],
-            "answer" : "Both // and /*"
-        },
         {
             "question" : "Which of the following is not a JavaScript data type",
             "choices" : ["Boolean", "String", "Number", "Character"],
@@ -138,14 +247,45 @@
             "answer" : "int"
         },
         {
-            "question" : "Which of the following is not a JavaScript framework",
-            "choices" : ["React", "Angular", "Vue", "Django"],
-            "answer" : "Django"
-        },
-        {
             "question" : "Which of the following is not a JavaScript library",
             "choices" : ["jQuery", "React", "Angular", "Vue"],
             "answer" : "React"
+        },
+        {
+            "question": "Who originally wrote JavaScript",
+            "choices": ["Harrison Fran", "Jordan Walke", "April Lindel", "Brendan Eich"],
+            "answer": "Brendan Eich"
+        },
+        {
+            "question": "Which of the following is not an object in JavaScript",
+            "choices": ["Array", "Function", "Null", "Integer"],
+            "answer": "Integer"
+        },
+        {
+            "question": "How can you detect the client's browser name?",
+            "choices": ["navigator.appName", "browser.name", "client.navName", "browser.appName"],
+            "answer": "navigator.appName"
+        },
+        {
+            "question": "Which of the following is used to remove an item from an array's last index",
+            "choices": ["pop()", "push()", "splice()", "shift()"],
+            "answer": "pop()"
+        },
+        {
+            "question": "Which of the following is used to add an item to an array's last index",
+            "choices": ["pop()", "push()", "splice()", "shift()"],
+            "answer": "push()"
+        },
+        {
+            "question": "What is the name of functions passed unto other functions as arguments",
+            "choices": ["Callback", "Argument function", "Trace function", "Pass function"],
+            "answer": "Callback"
+        },
+        {
+            "question": "What name is given to a variable that is non-existent in the application's scope",
+            "choices": ["Undefined", "Null", "NaN", "Undeclared"],
+            "answer": "Undeclared"
+
         }
     ]
   }
