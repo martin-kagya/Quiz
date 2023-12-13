@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Display from './assets/Display'
+import ScoreDisplay from './assets/ScoreDisplay'
 
 function App() {
 

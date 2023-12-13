@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../index.css"
-import QuestionForm from "../QuestionForm";
+import QuestionForm from "./QuestionForm";
 import questionData from "../questions.json"
 import Typewriter from "./TypeWriter";
 function Display ()

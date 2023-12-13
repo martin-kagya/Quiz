@@ -80,37 +80,37 @@
           },
           {
             "question": "Oxygen was discovered by which scientist",
-            "choices": ["Joseph Priestley", "Isaac Newton", "Albert Einstein", "Thomas Edison"],
+            "choices": ["Isaac Newton", "Albert Einstein", "Joseph Priestley", "Thomas Edison"],
             "answer": "Joseph Priestley"
           },
           {
             "question": "How many elements are on the periodic table",
-            "choices": ["118", "119", "120", "121"],
+            "choices": ["119", "118", "120", "121"],
             "answer": "118"      
         },
         {
             "question": "What is the rarest blood type",
-            "choices": ["AB-", "AB+", "O-", "O+"],
+            "choices": ["O+", "AB+", "O-", "AB-"],
             "answer": "AB-"
         },
         {
             "question": "Which disease stems from the medieval term, 'bad air'",
-            "choices": ["Malaria", "Typhoid", "Tuberculosis", "Cholera"],
+            "choices": ["Tuberclosis", "Typhoid", "Malaria", "Cholera"],
             "answer": "Malaria"
         },
         {
             "question": "Oncology is the study of what?",
-            "choices": ["Cancer", "Bones", "Blood", "Skin"],
+            "choices": ["Eye", "Bones", "Cancer", "Skin"],
             "answer": "Cancer"
         },
         {
             "question": "What type of cell division results in two four daughter cells, each with half the number of chromosomes in the parent cells?",
-            "choices": ["Meiosis", "Mitosis", "Cytokinesis", "Binary Fission"],
+            "choices": ["Haploid", "Mitosis", "Meiosis", "Binary Fission"],
             "answer": "Meiosis"
         },
         {
             "question": "What is the name of the most recent supercontinent?",
-            "choices": ["Pangaea", "Gondwana", "Laurasia", "Pannotia"],
+            "choices": ["Pannotia", "Gondwana", "Laurasia", "Pangaea"],
             "answer": "Pangaea"
         },
         {
