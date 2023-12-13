@@ -72,7 +72,7 @@ function Display ()
         <>
         {!login && (
         <form className="flex justify-center items-center flex-col">
-            <input className="border relative rounded-md border-cyan-500 h-10 w-32 text-sm" type="text" placeholder="Enter your name" required onChange={handleNameInput}/>
+            <input className="border uppercase relative rounded-md border-cyan-500 h-10 w-32 text-sm" type="text" placeholder="Enter your name" required onChange={handleNameInput}/>
             <br></br>
             <button className="border rounded-md border-black h-10 w-32 bg-gradient-to-r from-cyan-500 to-blue-500 text-lg" onClick={handleclick}>Submit</button>
         </form>
@@ -81,7 +81,7 @@ function Display ()
             
     {showCategory && (
         <div className="container flex justify-center items-center flex-col">
-             <h1 className="text-xl font-bold header pt-4"><Typewriter text={`WELCOME ${localStorage.getItem("name")}`} speed={100}/><br></br><span className="italic font-thin">Choose a category</span></h1>
+             <h1 className="text-xl font-bold header pt-4 uppercase"><Typewriter text={`WELCOME ${localStorage.getItem("name")}`} speed={100}/><br></br><span className="italic font-thin lowercase">Choose a category</span></h1>
             <br></br>
             <br></br>
             <ul className="title grid grid-rows-3 grid-flow-col gap-3">
